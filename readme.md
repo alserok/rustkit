@@ -1,3 +1,17 @@
+# Rustkit
+
+---
+
+* Load balancer
+
+## Kit for backend development written in Rust
+
+## Load balancer
+
+### Round robin
+
+```rust
+
 mod load_balancer;
 use load_balancer::{LoadBalancer, RoundRobin};
 
@@ -15,3 +29,6 @@ fn main() {
     // remove element with value equal to 5
     bal.remove(5);
 }
+
+
+```
