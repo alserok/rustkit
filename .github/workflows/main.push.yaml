@@ -1,0 +1,26 @@
+name: main (CI)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: set up
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        override-with-cache: true
+
+    - name: linter
+      run: cargo clippy --all-targets --all-features -- -D warnings
+
+    - name: tests
+      run: cargo test
