@@ -40,7 +40,7 @@ By default `stick` is equal to 1 (the same as default Round Robin).
 
 ```rust
 mod load_balancer;
-use load_balancer::{LoadBalancer, RoundRobin, StickyRoundRobin};
+use load_balancer::{LoadBalancer, StickyRoundRobin};
 
 fn main() {
     let mut bal: StickyRoundRobin<i32> = StickyRoundRobin::new(2);
